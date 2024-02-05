@@ -35,53 +35,31 @@ def square(x):
     return x ** 2
 
 
-# Display functions
-def display_functions():
-    print("\nSelect a function:")
-    print("1. Addition")
-    print("2. Subtraction")
-    print("3. Multiplication")
-    print("4. Division")
-    print("5. Square")
-    print("6. Exit")
-
-
-# Get user input and perform calculations
 while True:
-    display_functions()
-    choice = input("Enter your choice (1-6): ")
+    num1 = get_number_input()
+    operation = input(
+        "Select operation: + (add), - (subtract), * (multiply), / (divide), ** (square), or 'q' to quit: ")
 
-    if choice == "1":
-        num1 = get_number_input()
-        num2 = get_number_input()
-        result = add(num1, num2)
-        print(f"{num1} + {num2} = {result}")
-
-    elif choice == "2":
-        num1 = get_number_input()
-        num2 = get_number_input()
-        result = subtract(num1, num2)
-        print(f"{num1} - {num2} = {result}")
-
-    elif choice == "3":
-        num1 = get_number_input()
-        num2 = get_number_input()
-        result = multiply(num1, num2)
-        print(f"{num1} * {num2}  = {result}")
-
-    elif choice == "4":
-        num1 = get_number_input()
-        num2 = get_number_input()
-        result = divide(num1, num2)
-        print(f"{num1} / {num2} = {result}")
-
-    elif choice == "5":
-        num1 = get_number_input()
-        result = square(num1)
-        print(f"{num1} * {num1} = {result}")
-
-    elif choice == "6":
-        print("Exiting the calculator app. Goodbye!")
+    if operation.lower() == 'q':
         break
+
+    if operation in ('+', '-', '*', '/'):
+        num2 = get_number_input()
     else:
-        print("Invalid choice. Please enter a number between 1 and 6.")
+        num2 = None
+
+    if operation == '+':
+        result = add(num1, num2)
+    elif operation == '-':
+        result = subtract(num1, num2)
+    elif operation == '*':
+        result = multiply(num1, num2)
+    elif operation == '/':
+        result = divide(num1, num2)
+    elif operation == '**':
+        result = square(num1)
+    else:
+        print("Invalid operation selected. Please try again.")
+        continue
+
+    print(f"Result: {result}")
