@@ -1,6 +1,6 @@
 # pre-program-tasks
 
-## 1. Simple Calculator Module
+## 1. Simple Calculator Program
 
 This is a basic calculator script written in Python. This calculator performs addition, subtraction, multiplication, division, and square functions. The user can select a function, enter input, and view the result. In addition, the app includes error checks for invalid input and division by zero.
 
