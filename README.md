@@ -1,8 +1,8 @@
 # pre-program-tasks
 
-## 1. Simple Calculator App
+## 1. Simple Calculator Module
 
-This is a basic calculator app written in Python. This calculator performs addition, subtraction, multiplication, division, and square functions. The user can select a function, enter input, and view the result. In addition, the app includes error checks for invalid input and division by zero.
+This is a basic calculator script written in Python. This calculator performs addition, subtraction, multiplication, division, and square functions. The user can select a function, enter input, and view the result. In addition, the app includes error checks for invalid input and division by zero.
 
 ### Requirements
 
@@ -18,7 +18,7 @@ pycodestyle 2.10.0
 
 - View the result of the selected function.
 
-- To exit the app, choose the "Exit" option.
+- To exit the app, choose the "q" option.
 
 ### Functions
 
@@ -37,5 +37,5 @@ pycodestyle 2.10.0
 ### File
 
 | Task                                                                                                                                                                          | Script          |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| ----------------------------------------------------------------- | --------------- |
 | Create a simple calculator program that adds, divide, subtract, multiply, square. Without using any inbuilt library or math functions. You can use the math operators (\*+/-) | `calculator.py` |
