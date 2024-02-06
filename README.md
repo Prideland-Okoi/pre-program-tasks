@@ -36,7 +36,7 @@ pycodestyle 2.10.0
 
 - Input validation is implemented to handle invalid input (e.g., non-numeric values).
 
-- The program will continue running until the user chooses to exit.
+- The program will continue running until the user chooses `q` to exit.
 
 ### File
 
