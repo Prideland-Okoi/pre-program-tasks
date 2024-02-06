@@ -49,7 +49,7 @@ def square(x):
     return x ** 2
 
 
-def main():
+def calculator():
     """
     Main function to perform arithmetic operations based on user input.
     """
@@ -84,4 +84,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    calculator()
