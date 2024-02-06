@@ -6,9 +6,9 @@ This is a basic calculator script written in Python. This calculator performs ad
 
 ### Requirements
 
-python 3.10.7
-scripts are written in bash 4.4.23(2)
-pycodestyle 2.10.0
+- python 3.10.7
+- scripts are written in bash 4.4.23(2)
+- pycodestyle 2.10.0
 
 ### Usage
 
