@@ -18,14 +18,18 @@ pycodestyle 2.10.0
 
 - View the result of the selected function.
 
-- To exit the app, choose the "q" option.
+- To exit the program, choose the "q" option.
 
 ### Functions
 
 **Addition:** Adds two numbers.
+
 **Subtraction:** Subtracts the second number from the first.
+
 **Multiplication:** Multiplies two numbers.
+
 **Division:** Divides the first number by the second (with error check for division by zero).
+
 **Square:** Squares a single number.
 
 #### Notes
