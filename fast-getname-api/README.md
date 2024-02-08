@@ -10,7 +10,7 @@ This project is a simple API built with FastAPI to handle user information, spec
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.10
 - FastAPI
 - Uvicorn (ASGI server)
 - Pydantic
@@ -20,13 +20,13 @@ This project is a simple API built with FastAPI to handle user information, spec
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/prideland-okoi/fast-fullname-api.git
+   git clone https://github.com/prideland-okoi/task_2/fast-getname-api.git
    ```
 
 2. Install the required dependencies:
 
    ```bash
-   cd fast-fullname-api
+   cd fast-getname-api
    pip install -r requirements.txt
    ```
 
@@ -44,7 +44,7 @@ This project is a simple API built with FastAPI to handle user information, spec
 
 ```bash
 curl -X 'POST' \
- 'http://localhost:8000/get_fullname/' \
+ 'http://localhost:8000/api/get_fullname/' \
  -H 'accept: application/json' \
  -H 'Content-Type: application/json' \
  -d '{
@@ -69,8 +69,3 @@ For more detailed information about the API endpoints, models, validators, and i
 | Task                                                                                                                         | scripts           |
 | ---------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | From the video shown, create a simple fast API that takes the first and last name of a user and returns the user's full name | `get_fullname.py` |
-
-````
-
-|```
-````
