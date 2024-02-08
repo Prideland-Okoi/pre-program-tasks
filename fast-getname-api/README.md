@@ -38,7 +38,7 @@ This project is a simple API built with FastAPI to handle user information, spec
    uvicorn main:app --reload
    ```
 
-2a. Navigate to `http://127.0.0.1:8000/docs` in your web browser to access the Swagger UI for interacting with the API. or
+2a. Navigate to `http://127.0.0.1:8000/docs` or hosted website `https://get-name-api.onrender.com/docs` in your web browser to access the Swagger UI for interacting with the API. or
 
 2b. Open another terminal and run the curl command
 
