@@ -47,7 +47,7 @@ async def upload_pdf(file: UploadFile = File(...)):
             )
 
         # Save the uploaded file to the temporary directory
-        with open(f"uploads/{file.filename}", "wb") as buffer:
+        with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
         return (
