@@ -83,6 +83,12 @@ This is a simple API built with FastAPI that allows users to upload PDF files an
 - **File Upload**: Users can upload PDF files. Only PDF files are allowed and there is a maximum file size limit of 5 MB.
 - **File Retrieval**: Users can retrieve uploaded PDF files.
 
+### Requirements
+- fastapi
+- uvicorn
+- Werkzeug
+- python-multipart
+
 ### Setup
 
 1. Clone this repository.
