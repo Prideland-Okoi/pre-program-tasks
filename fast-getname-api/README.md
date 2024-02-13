@@ -3,7 +3,7 @@
 This project encompasses two APIs built with FastAPI - one for handling user information, specifically their first and last names, and the other for handling PDF file uploads and retrieval.
 
 
-## Fast Full Name and PDF Upload API
+## Fast Full Name API
 This project is a simple API built with FastAPI to handle user information, specifically their first and last names.
 
 ### Features
