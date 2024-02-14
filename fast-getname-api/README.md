@@ -121,6 +121,18 @@ Example:
 curl http://localhost:8000/api/get_pdf/Devops_in_Python.pdf --output Devops_in_Python.pdf
 ```
 
+#### List Uploaded PDF Files
+
+Endpoint: `GET /api/list_pdfs/`
+
+Retrieve a list of PDF files uploaded to the server along with their creation dates.
+
+Example:
+
+```bash
+curl http://localhost:8000/api/list_pdfs/
+```
+
 ### Error Handling
 
 - **400 Bad Request**: Returned if a non-PDF file is uploaded.
