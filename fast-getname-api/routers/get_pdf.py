@@ -1,6 +1,7 @@
 from fastapi import APIRouter, File, UploadFile
 from fastapi.responses import JSONResponse, FileResponse
 from werkzeug.utils import secure_filename
+from datetime import datetime
 import shutil
 import os
 
@@ -76,6 +77,29 @@ async def get_pdf(filename: str):
         return FileResponse(
             file_path, media_type="application/pdf", filename=filename
         )
+    except Exception as e:
+        return JSONResponse(
+            status_code=500, content={"error": str(e)}
+        )
+
+
+@router.get("/api/list_pdfs/")
+async def get_pdflist():
+    try:
+        # Get list of filenames in the "uploads" directory
+        pdf_details = []
+        for filename in os.listdir(UPLOAD_DIR):
+            file_path = os.path.join(UPLOAD_DIR, filename)
+            creation_at = datetime.fromtimestamp(
+                os.path.getctime(file_path)
+            )
+            pdf_details.append(
+                {
+                    "filename": filename,
+                    "creation_at": creation_at
+                }
+            )
+        return {"pdf_details": pdf_details}
     except Exception as e:
         return JSONResponse(
             status_code=500, content={"error": str(e)}
