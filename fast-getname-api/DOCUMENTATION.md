@@ -20,7 +20,7 @@ This API provides functionality to handle user information, specifically their f
 - **Response:** JSON object containing the full name.
   ```json
   {
-    "full_name": "John Doe"
+    "full_name": "Prideland Okoi"
   }
   ```
 
