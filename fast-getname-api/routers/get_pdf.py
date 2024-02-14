@@ -1,3 +1,7 @@
+"""
+This module provides functionality for uploading, retrieving, and listing PDF files using FastAPI.
+"""
+
 from fastapi import APIRouter, File, UploadFile
 from fastapi.responses import JSONResponse, FileResponse
 from werkzeug.utils import secure_filename
@@ -18,6 +22,15 @@ MAX_FILE_SIZE = 5 * 1024 * 1024
 
 @router.post("/api/upload_pdf/")
 async def upload_pdf(file: UploadFile = File(...)):
+    """
+    Uploads a PDF file to the server.
+
+    Args:
+        file (UploadFile): The PDF file to upload.
+
+    Returns:
+        JSONResponse: JSON response indicating success or failure of the upload.
+    """
     try:
         # Ensure that the file is a PDF
         if not file.filename.lower().endswith(".pdf"):
@@ -65,6 +78,15 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 @router.get("/api/get_pdf/{filename}")
 async def get_pdf(filename: str):
+    """
+    Retrieves a PDF file from the server.
+
+    Args:
+        filename (str): The name of the PDF file to retrieve.
+
+    Returns:
+        FileResponse: The PDF file as a response.
+    """
     try:
         # Ensure the requested file exists in the upload directory
         file_path = os.path.join(UPLOAD_DIR, filename)
@@ -85,6 +107,12 @@ async def get_pdf(filename: str):
 
 @router.get("/api/list_pdfs/")
 async def get_pdflist():
+    """
+    Retrieves a list of PDF files available on the server.
+
+    Returns:
+        dict: A dictionary containing details of the available PDF files.
+    """
     try:
         # Get list of filenames in the "uploads" directory
         pdf_details = []
