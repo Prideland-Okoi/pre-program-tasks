@@ -118,13 +118,13 @@ async def get_pdflist():
         pdf_details = []
         for filename in os.listdir(UPLOAD_DIR):
             file_path = os.path.join(UPLOAD_DIR, filename)
-            creation_at = datetime.fromtimestamp(
+            created_at = datetime.fromtimestamp(
                 os.path.getctime(file_path)
             )
             pdf_details.append(
                 {
                     "filename": filename,
-                    "creation_at": creation_at
+                    "created_at": created_at
                 }
             )
         return {"pdf_details": pdf_details}
