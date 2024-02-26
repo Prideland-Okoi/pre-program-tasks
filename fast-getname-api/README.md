@@ -1,4 +1,4 @@
-# Fast Full Name and PDF Upload API
+# Fast Full Name, PDF Upload API and READ PDF content API
 
 This project encompasses three APIs built with FastAPI - one for handling user information, specifically their first and last names, the second one for handling PDF file uploads and retrieval and the other allows you to read the content of a PDF file..
 
