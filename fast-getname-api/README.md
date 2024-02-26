@@ -1,6 +1,6 @@
 # Fast Full Name and PDF Upload API
 
-This project encompasses two APIs built with FastAPI - one for handling user information, specifically their first and last names, and the other for handling PDF file uploads and retrieval.
+This project encompasses three APIs built with FastAPI - one for handling user information, specifically their first and last names, the second one for handling PDF file uploads and retrieval and the other allows you to read the content of a PDF file..
 
 
 ## Fast Full Name API
@@ -145,3 +145,30 @@ curl http://localhost:8000/api/list_pdfs/
 | Task| scripts           |
 | ------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 |In your last program, you created an API to join words. In this task, create an API endpoint that collects a PDF file and stores that file to disk.|`get_pdf.py`|
+
+## PDF Reader API
+
+This API endpoint allows you to read the content of a PDF file.
+
+### Usage
+
+#### Read contents of PDF file
+Endpoint: `GET /api/read_pdf/{filename}`
+
+Reads the content of a PDF file.
+
+Example
+
+```bash
+curl -X GET http://localhost:8000/api/read_pdf/devops_in_python.pdf
+```
+
+### Response:
+  - **200 OK**: Returns the text content extracted from the PDF file.
+  - **404 Not Found**: If the requested file is not found.
+  - **500 Internal Server Error**: If there's an error during processing.
+
+### Files
+| Task| scripts           |
+| ------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+|In your api endpoint that collects a pdf file, create a reader that reads the pdf and returns the data as given in the example attached to this tasks.|`read_pdf.py`|
