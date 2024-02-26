@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Author - prideland.okoi@gmail.com
-# API DOC - https://get-name-api.onrender.com/docs
+# API DOC - https://fastapi-tasks.onrender.com
 import uvicorn
 from fastapi import FastAPI
 from routers import get_fullname, get_pdf
