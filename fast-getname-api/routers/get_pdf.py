@@ -8,6 +8,8 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 import shutil
 import os
+from io import BytesIO
+import PyPDF2
 
 
 router = APIRouter()
@@ -128,6 +130,48 @@ async def get_pdflist():
                 }
             )
         return {"pdf_details": pdf_details}
+    except Exception as e:
+        return JSONResponse(
+            status_code=500, content={"error": str(e)}
+        )
+
+
+@router.get("/api/read_pdf/{filename}")
+async def read_pdf(filename: str):
+    """
+    Reads the content of a PDF file.
+
+    Args:
+        filename (str): The name of the PDF file to be read.
+
+    Returns:
+        str: The text content extracted from the PDF file.
+
+    Raises:
+        HTTPException: If the requested file is not found or if there's an error during processing.
+    """
+    try:
+        # Ensure the requested file exists in the upload directory
+        file_path = os.path.join(UPLOAD_DIR, filename)
+        if not os.path.exists(file_path):
+            return JSONResponse(
+                status_code=404, content={"error": "File not found"}
+            )
+        # Read the PDF file
+        with open(file_path, "rb") as f:
+            pdf_data = f.read()
+
+        # Process the PDF using PyPDF2
+        pdf = PyPDF2.PdfReader(BytesIO(pdf_data))
+        text = ""
+        number_of_pages = len(pdf.pages)
+        reader = range(number_of_pages)
+        for page_num in reader:
+            page = pdf.pages[page_num]
+            text += page.extract_text()
+        # Remove newline characters and concatenate the text
+        processed_text = " ".join(text.strip().split())
+        return processed_text
     except Exception as e:
         return JSONResponse(
             status_code=500, content={"error": str(e)}
